@@ -1,19 +1,19 @@
 {
-  "name": "web-extension-template",
+  "name": "git-glance",
   "version": "1.0.0",
-  "description": "Template for developing web extenstion using TypeScript",
+  "description": "A web extension to enhance the GitHub Experience.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/divshekhar/web-extension-template.git"
+    "url": "git+https://github.com/divshekhar/GitGlance.git"
   },
   "author": "Divyanshu Shekhar",
-  "license": "Apache",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/divshekhar/web-extension-template/issues"
+    "url": "https://github.com/divshekhar/GitGlance/issues"
   },
-  "homepage": "https://github.com/divshekhar/web-extension-template#readme",
+  "homepage": "https://github.com/divshekhar/GitGlance#readme",
   "scripts": {
-    "start": "webpack --config webpack/webpack.config.js --env env=dev",
+    "build:dev": "webpack --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "watch": "webpack -w --config webpack/webpack.config.js --env env=dev",
     "clean": "rimraf dist",
