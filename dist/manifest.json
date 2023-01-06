@@ -17,7 +17,20 @@
     "default_popup": "popup.html"
   },
 
-  "permissions": [],
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
 
-  "host_permissions": ["*://*.example.com/*"]
+  "permissions": ["contextMenus"],
+
+  "host_permissions": ["*://*.example.com/*"],
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "MacCtrl+Shift+Y"
+      }
+    }
+  }
 }
