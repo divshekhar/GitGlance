@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-switch": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -61,7 +62,6 @@
     "jest-environment-jsdom": "^29.3.1",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
-    "react-refresh": "^0.14.0",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.3",

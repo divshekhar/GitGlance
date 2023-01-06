@@ -1,0 +1,36 @@
+body {
+  margin: 20px;
+}
+
+#header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+}
+
+#header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#brand {
+  float: left;
+}
+
+#brand a {
+  text-decoration: none;
+  color: #000;
+}
+
+#brandName {
+  font-size: 1.5em;
+  margin: 0.7em 0 0.3em 0;
+  display: inline-block;
+}
+
+#logo {
+  max-width: 40px;
+  float: left;
+  margin: 0 10px 0 0;
+}
