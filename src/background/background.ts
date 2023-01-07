@@ -1,6 +1,13 @@
 chrome.runtime.onInstalled.addListener(() => {
   console.log("Extension installed");
 
+  // set the initial value for extension
+  chrome.storage.sync.set({ enabled: true }, () => {
+    setContextMenu();
+  });
+});
+
+function setContextMenu() {
   const contextMenu: chrome.contextMenus.CreateProperties = {
     id: "glance",
     title: "Glance",
@@ -11,9 +18,7 @@ chrome.runtime.onInstalled.addListener(() => {
   // Add context menu
   chrome.contextMenus.create(contextMenu);
   chrome.contextMenus.onClicked.addListener((info, tab) => clickHandler(info, tab!));
-
-  console.log("Context menu added");
-});
+}
 
 function clickHandler(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
   console.log("Glance ", info.linkUrl);
@@ -23,3 +28,16 @@ function clickHandler(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Ta
     console.log("Response: ", response);
   });
 }
+
+// Listen for changes in storage and update context menu
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === "sync") {
+    if (changes.enabled) {
+      if (changes.enabled.newValue) {
+        setContextMenu();
+      } else {
+        chrome.contextMenus.removeAll();
+      }
+    }
+  }
+});

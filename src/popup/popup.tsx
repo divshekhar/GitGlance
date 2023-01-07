@@ -4,23 +4,25 @@ import Switch from "react-switch";
 import "./popup.css";
 
 export default function Popup() {
-  const [checked, setChecked] = React.useState(true);
+  const [enabled, setEnabled] = React.useState(true);
 
   // get the value from chrome storage
-  chrome.storage.sync.get(["on"]).then((result) => {
-    setChecked(result.on);
+  chrome.storage.sync.get(["enabled"]).then((result) => {
+    if (result.enabled != undefined) {
+      setEnabled(result.enabled);
+    }
   });
 
-  async function toggleSwitch() {
-    setChecked(!checked);
+  function toggleSwitch() {
+    setEnabled(!enabled);
 
     // store the value in chrome storage
-    await chrome.storage.sync.set({ on: !checked });
+    chrome.storage.sync.set({ enabled: !enabled });
   }
 
   return (
     <div className="popupContainer">
-      <Switch onChange={toggleSwitch} checked={checked} />
+      <Switch onChange={toggleSwitch} checked={enabled} />
     </div>
   );
 }
