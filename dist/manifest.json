@@ -14,7 +14,9 @@
 
   "action": {
     "default_icon": "./assets/icons/icon16.png",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "GitGlance",
+    "default_area": "page_action"
   },
 
   "background": {
