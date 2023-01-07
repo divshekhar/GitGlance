@@ -30,7 +30,7 @@
     "service_worker": "./scripts/background.js"
   },
 
-  "permissions": ["contextMenus"],
+  "permissions": ["storage", "contextMenus"],
 
   "host_permissions": ["*://*.github.com/*"],
 
