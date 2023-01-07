@@ -2,9 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   console.log("Extension installed");
 
   // set the initial value for extension
-  chrome.storage.sync.set({ enabled: true }, () => {
-    setContextMenu();
-  });
+  chrome.storage.sync.set({ enabled: true });
 });
 
 function setContextMenu() {
