@@ -25,7 +25,9 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,css,scss,md,json}\""
   },
   "dependencies": {
+    "node-fetch": "^3.3.0",
     "react": "^18.2.0",
+    "react-code-blocks": "^0.0.9-0",
     "react-dom": "^18.2.0",
     "react-switch": "^7.0.0"
   },
